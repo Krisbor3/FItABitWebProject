@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="font-size: 16px;" class="u-responsive-sm">
+<head>
+    <title>@ViewData["Title"] - FItABitWebProject</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FItABitWebProject.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FItABit</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+           <div class="background-image"></div>
+                <img src="~/img/FitABit-logos_transparent.png" alt="" class="logoImg" width=160 height=160>
+            @RenderBody()
+            <hr />
+            <section class="u-align-center u-clearfix u-image u-shading u-valign-top u-section-1" id="carousel_b157" data-image-width="1600" data-image-height="933">
+                
+                <h5 class="FitSite">Fitness Site</h5>
+                <h2 class="Slogan"> Get a bit more fit !</h2>
+                <h3 class="motivation">Improve every single day by tracking your progress.</h3>
+                <a href="https://nicepage.app" class="u-active-white u-align-center u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-btn-round u-button-style u-hover-white u-none u-radius-8 u-btn-1">
+                    Get started now<br>
+                </a>
+            </section>
+            
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            &copy; @DateTime.Now.Year - FItABit - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

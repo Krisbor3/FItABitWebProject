@@ -1,0 +1,45 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    background-image: url('/img/wdqfe-min.jpg');
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction:column;
+}
+.FitSite {
+    margin-top: 100px;
+}
+.logoImg {
+    position: relative;
+    top: -5px;
+    right: -100px;
+    float: right;
+}
+.Slogan{
+    font-size:80px;
+    font-style:oblique;
+    margin-bottom:30px;
+}
+.footer{
+    text-align:end;
+    margin-top:130px;
+}
+.motivation{
+    margin-bottom:50px;
+}

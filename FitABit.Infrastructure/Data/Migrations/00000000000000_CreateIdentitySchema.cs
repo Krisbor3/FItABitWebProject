@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace FItABitWebProject.Data.Migrations
+namespace FitABit.Infrastructure.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

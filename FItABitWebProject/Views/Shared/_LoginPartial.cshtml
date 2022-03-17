@@ -2,15 +2,18 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
-<ul class="navbar-nav">
+<link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
+
+<ul style="margin-top:20px" class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item">
         <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
     </li>
+    
     <li class="nav-item">
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+            <button style="border:black" type="submit" class="nav-link btn btn-link text-dark"> <i class="fas fa-sign-in-alt"> LOG OUT</i></button>
         </form>
     </li>
 }

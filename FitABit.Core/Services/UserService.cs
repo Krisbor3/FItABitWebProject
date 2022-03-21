@@ -29,5 +29,33 @@ namespace FitABit.Core.Services
                 })
                 .ToListAsync();
         }
+
+        public async Task<UserEditViewModel> GetUsersForEdit(string id)
+        {
+            var user = await repo.GetByIdAsync<ApplicationUser>(id);
+
+            return new UserEditViewModel()
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Id = user.Id
+            };
+        }
+
+        public async Task<bool> UpdateUser(UserEditViewModel model)
+        {
+            bool result = false;
+            var user = await repo.GetByIdAsync<ApplicationUser>(model.Id);
+
+            if (user != null)
+            {
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+                user.Id = model.Id;
+                await repo.SaveChangesAsync();
+                result = true;
+            }
+            return result;
+        }
     }
 }

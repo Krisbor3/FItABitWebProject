@@ -25,7 +25,7 @@ namespace FItABit.Controllers
         public IActionResult Index()
         {
             return View();
-        }
+        }   
 
         [Authorize(Roles = UserConstants.Roles.Administrator)]
         public async Task<IActionResult> ManageUsers()

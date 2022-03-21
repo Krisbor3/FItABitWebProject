@@ -1,6 +1,7 @@
-﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+﻿@using FitABit.Infrastructure.Models
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 
 <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
 
@@ -13,7 +14,7 @@
     
     <li class="nav-item">
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button style="border:black" type="submit" class="nav-link btn btn-link text-dark"> <i class="fas fa-sign-in-alt"> LOG OUT</i></button>
+            <button style="border:black" type="submit" class="nav-link btn btn-link text-dark"> <i class="fas fa-sign-in-alt"></i> LOG OUT</button>
         </form>
     </li>
 }

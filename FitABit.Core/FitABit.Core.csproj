@@ -10,4 +10,8 @@
     <ProjectReference Include="..\FitABit.Infrastructure\FitABit.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+  </ItemGroup>
+
 </Project>

@@ -1652,7 +1652,7 @@ h4.modal-title {
     height: 35px;
     border: none;
     text-indent: 100%;
-    background: url(../images/move-up.png) no-repeat 0px 0px;
+    background: url("~/img/imagesU/move-up.png") no-repeat 0px 0px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -o-border-radius: 50%;

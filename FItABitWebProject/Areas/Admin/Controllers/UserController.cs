@@ -49,12 +49,27 @@ namespace FItABit.Areas.Admin.Controllers
                 .Select(r => new SelectListItem()
                 {
                     Text = r.Name,
-                    Value = r.Id,
-                    Selected=userManager.IsInRoleAsync(user,r.Name).Result
-                });
+                    Value = r.Name,
+                    Selected = userManager.IsInRoleAsync(user, r.Name).Result
+                }).ToList();
 
             return View(model);
         }
+        [HttpPost]
+        public async Task<IActionResult> Roles(UserRolesViewModel model)
+        {
+            var user = await userService.GetUserById(model.UserId);
+            var userRoles = await userManager.GetRolesAsync(user);
+            await userManager.RemoveFromRolesAsync(user, userRoles);
+
+            if (model.RoleNames?.Length > 0)
+            {
+                await userManager.AddToRolesAsync(user, model.RoleNames);
+            }
+
+            return RedirectToAction(nameof(ManageUsers));
+        }
+
         public async Task<IActionResult> Edit(string id)
         {
             var model = await userService.GetUsersForEdit(id);
@@ -70,7 +85,7 @@ namespace FItABit.Areas.Admin.Controllers
             }
             if (await userService.UpdateUser(model))
             {
-                ViewData["Result"]= "Update Successfull!";
+                ViewData["Result"] = "Update Successfull!";
             }
             else
             {
@@ -81,10 +96,10 @@ namespace FItABit.Areas.Admin.Controllers
         }
         public async Task<IActionResult> CreateRole()
         {
-            await roleManager.CreateAsync(new IdentityRole()
-            {
-                Name = "Instructor"
-            });
+            //await roleManager.CreateAsync(new IdentityRole()
+            //{
+            //    Name = "Instructor"
+            //});
             return Ok();
         }
     }

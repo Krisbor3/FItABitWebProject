@@ -88,4 +88,8 @@
     <ProjectReference Include="..\FitABit.Core\FitABit.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Views\Home\" />
+  </ItemGroup>
+
 </Project>

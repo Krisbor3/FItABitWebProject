@@ -3,6 +3,9 @@ using FitABit.Core.Models;
 using FitABit.Infrastructure.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace FItABit.Areas.Admin.Controllers
 {
@@ -34,7 +37,23 @@ namespace FItABit.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Roles(string id)
         {
-            return Ok(id);
+            var user = await userService.GetUserById(id);
+            var model = new UserRolesViewModel()
+            {
+                UserId = user.Id,
+                Name = $"{user.FirstName} {user.LastName}"
+            };
+
+            ViewBag.RoleItems = roleManager.Roles
+                .ToList()
+                .Select(r => new SelectListItem()
+                {
+                    Text = r.Name,
+                    Value = r.Id,
+                    Selected=userManager.IsInRoleAsync(user,r.Name).Result
+                });
+
+            return View(model);
         }
         public async Task<IActionResult> Edit(string id)
         {
@@ -43,9 +62,9 @@ namespace FItABit.Areas.Admin.Controllers
             return View(model);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(string id,UserEditViewModel model)
+        public async Task<IActionResult> Edit(UserEditViewModel model)
         {
-            if (!ModelState.IsValid || id!= model.Id)
+            if (!ModelState.IsValid)
             {
                 return View(model);
             }
@@ -62,10 +81,10 @@ namespace FItABit.Areas.Admin.Controllers
         }
         public async Task<IActionResult> CreateRole()
         {
-            //await roleManager.CreateAsync(new IdentityRole()
-            //{
-            //    Name = "Administrator"
-            //});
+            await roleManager.CreateAsync(new IdentityRole()
+            {
+                Name = "Instructor"
+            });
             return Ok();
         }
     }

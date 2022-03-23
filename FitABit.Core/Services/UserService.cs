@@ -2,6 +2,7 @@
 using FitABit.Core.Models;
 using FitABit.Infrastructure.Data.Repositories;
 using FitABit.Infrastructure.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,17 @@ namespace FitABit.Core.Services
     public class UserService : IUserService
     {
         private readonly IApplicationDbRepository repo;
+        //private readonly RoleManager roleManager;
         public UserService(IApplicationDbRepository repo)
         {
             this.repo = repo;
         }
+
+        public async Task<ApplicationUser> GetUserById(string id)
+        {
+            return await repo.GetByIdAsync<ApplicationUser>(id);
+        }
+
         public async Task<IEnumerable<UserListViewModel>> GetUsers()
         {
             return await repo.All<ApplicationUser>()

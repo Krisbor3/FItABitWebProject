@@ -1,4 +1,5 @@
 ﻿using FitABit.Core.Constants;
+using FitABit.Core.Contracts;
 using FitABit.Infrastructure.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -12,19 +13,23 @@ namespace FItABit.Controllers
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly UserManager<ApplicationUser> userManager;
         private IUserService userService;
+        private IInstructorService instructorService;
         public UserController(
             RoleManager<IdentityRole> roleManager,
             UserManager<ApplicationUser> userManager,
-            IUserService userService)
+            IUserService userService,
+            IInstructorService instructorService)
         {
             this.roleManager = roleManager;
             this.userManager = userManager;
             this.userService = userService;
+            this.instructorService = instructorService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
-        }   
+            var instructors = await instructorService.GetInstructors();
+            return View(instructors);
+        }
     }
 }

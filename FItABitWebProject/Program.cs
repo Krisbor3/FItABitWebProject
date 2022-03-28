@@ -1,4 +1,5 @@
 using FitABit.Core.Constants;
+using FitABit.Core.Contracts;
 using FitABit.Core.Services;
 using FitABit.Infrastructure.Data;
 using FitABit.Infrastructure.Data.Repositories;
@@ -14,7 +15,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddScoped<IUserService, UserService>()
+builder.Services
+    .AddScoped<IUserService, UserService>()
+    .AddScoped<IInstructorService, InstructorService>()
     .AddScoped<IApplicationDbRepository,ApplicationDbRepository>();
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)

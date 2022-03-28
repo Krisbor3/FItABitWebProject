@@ -1,7 +1,9 @@
-﻿@{
+﻿@using FitABit.Core.Models
+@model IEnumerable<InstructorViewModel>
+@{
     Layout = null;
-
 }
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -9,7 +11,7 @@
     <title>Fitness Freak Sports Category Bootstrap Responsive website Template | Home  :: w3layouts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Fitness Freak Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+    <meta name="keywords" content="Fitness Freak Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
     <script>
         addEventListener("load", function () {
@@ -29,7 +31,7 @@
     <!-- flexslider -->
     <link rel="stylesheet" href="~/css/cssU/flexslider.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="~/css/cssU/smoothbox.css" type='text/css' media="all" />
-     <!-- font-awesome icons -->
+    <!-- font-awesome icons -->
     <link href="~/css/cssU/font-awesome.css" rel="stylesheet">
     <!-- //Custom Theme files -->
     <!-- web-fonts -->
@@ -52,7 +54,8 @@
                         <span class="icon-bar"></span>
                     </button>
                     <h1>
-                        <a class="navbar-brand" href="/User/Index">FBit
+                        <a class="navbar-brand" href="/User/Index">
+                            FBit
                             <span>ita</span>
                         </a>
                     </h1>
@@ -72,7 +75,8 @@
                                 <a href="#services" class="effect-3 scroll">specialization</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">Sub Menu
+                                <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">
+                                    Sub Menu
                                     <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
@@ -89,7 +93,8 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">More
+                                <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">
+                                    More
                                     <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
@@ -106,7 +111,8 @@
                                     </li>
                                     <li class="divider"></li>
                                     <li>
-                                        <a class="s-menu" href="#">Sub menu
+                                        <a class="s-menu" href="#">
+                                            Sub menu
                                             <b class="fa fa-caret-right"></b>
                                         </a>
                                         <ul class="dropdown-menu sub-menu">
@@ -130,7 +136,7 @@
                             <li>
                                 <partial name="_LoginPartial" />
                             </li>
-               
+
                         </ul>
                     </nav>
                 </div>
@@ -143,7 +149,7 @@
                 <li>
                     <div class="w3ls-banner-image  w3ls-banner-image1">
                         <div class="layer">
-                        <img style="opacity: 0.5" src=~/img/imagesU/b1.jpg alt=""/>
+                            <img style="opacity: 0.5" src=~/img/imagesU/b1.jpg alt="" />
                             <div class="banner-text">
                                 <h3>commit</h3>
                                 <p> to be fit</p>
@@ -154,7 +160,7 @@
                 <li>
                     <div class="w3ls-banner-image  w3ls-banner-image2">
                         <div class="layer">
-                            <img style="opacity: 0.5" src="~/img/imagesU/bg2.jpg"alt="" />
+                            <img style="opacity: 0.5" src="~/img/imagesU/bg2.jpg" alt="" />
                             <div class="banner-text">
                                 <h3>Fitness</h3>
                                 <p>is a lifestyle</p>
@@ -188,12 +194,16 @@
                     <p>we explore your hidden potential</p>
                 </div>
                 <div class="col-md-6 about-right">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut magna vitae sapien auctor pharetra nec
-                        in erat. In nisl nibh, maximus at quam eget, aliquet viverra lorem.</h5>
-                    <p>Pellentesque suscipit, ante et viverra malesuada, ante tellus ornare enim, sed convallis mauris diam
+                    <h5>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut magna vitae sapien auctor pharetra nec
+                        in erat. In nisl nibh, maximus at quam eget, aliquet viverra lorem.
+                    </h5>
+                    <p>
+                        Pellentesque suscipit, ante et viverra malesuada, ante tellus ornare enim, sed convallis mauris diam
                         sed nisl. Donec eleifend et lorem posuere semper. Aliquam id placerat mauris, at mollis neque. Vestibulum
                         ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus in faucibus
-                        lectus. Quisque convallis tempus leo et sagittis.</p>
+                        lectus. Quisque convallis tempus leo et sagittis.
+                    </p>
                 </div>
                 <div class="clearfix"> </div>
             </div>
@@ -210,7 +220,7 @@
                 </div>
                 <div class="about-section">
                     <div class="col-md-4 col-sm-6  abg1">
-                        <img style="opacity=0.5" src="~/img/imagesU/a2.jpg"alt="" />
+                        <img style="opacity=0.5" src="~/img/imagesU/a2.jpg" alt="" />
                     </div>
                     <div class="col-md-8 col-sm-6 wthree-sec-about">
                         <h4 class="bot-grid1">commit to be fit</h4>
@@ -224,7 +234,6 @@
                     <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>
                 </div>
                 <div class="col-md-4 col-sm-6 abg2">
-                
                 </div>
                 <div class="clearfix"> </div>
             </div>
@@ -320,7 +329,8 @@
         <div class="layer-stats">
             <div class="container section ">
                 <div class="col-md-3">
-                    <h4 class="stat-title text-center">we
+                    <h4 class="stat-title text-center">
+                        we
                         <span>explore</span>your hidden
                         <span>potential</span>
                     </h4>
@@ -527,8 +537,10 @@
                         <div class="item">
                             <div class="feedback-info">
                                 <div class="feedback-top">
-                                    <p> Sed semper leo metus, a lacinia eros semper at. Etiam sodales orci sit amet vehicula
-                                        pellentesque. </p>
+                                    <p>
+                                        Sed semper leo metus, a lacinia eros semper at. Etiam sodales orci sit amet vehicula
+                                        pellentesque.
+                                    </p>
                                 </div>
                                 <div class="feedback-grids">
                                     <div class="feedback-icon">
@@ -545,8 +557,10 @@
                         <div class="item">
                             <div class="feedback-info">
                                 <div class="feedback-top">
-                                    <p> Sed semper leo metus, a lacinia eros semper at. Etiam sodales orci sit amet vehicula
-                                        pellentesque. </p>
+                                    <p>
+                                        Sed semper leo metus, a lacinia eros semper at. Etiam sodales orci sit amet vehicula
+                                        pellentesque.
+                                    </p>
                                 </div>
                                 <div class="feedback-grids">
                                     <div class="feedback-icon">
@@ -563,8 +577,10 @@
                         <div class="item">
                             <div class="feedback-info">
                                 <div class="feedback-top">
-                                    <p> Sed semper leo metus, a lacinia eros semper at. Etiam sodales orci sit amet vehicula
-                                        pellentesque. </p>
+                                    <p>
+                                        Sed semper leo metus, a lacinia eros semper at. Etiam sodales orci sit amet vehicula
+                                        pellentesque.
+                                    </p>
                                 </div>
                                 <div class="feedback-grids">
                                     <div class="feedback-icon">
@@ -581,8 +597,10 @@
                         <div class="item">
                             <div class="feedback-info">
                                 <div class="feedback-top">
-                                    <p> Sed semper leo metus, a lacinia eros semper at. Etiam sodales orci sit amet vehicula
-                                        pellentesque. </p>
+                                    <p>
+                                        Sed semper leo metus, a lacinia eros semper at. Etiam sodales orci sit amet vehicula
+                                        pellentesque.
+                                    </p>
                                 </div>
                                 <div class="feedback-grids">
                                     <div class="feedback-icon">
@@ -599,8 +617,10 @@
                         <div class="item">
                             <div class="feedback-info">
                                 <div class="feedback-top">
-                                    <p> Sed semper leo metus, a lacinia eros semper at. Etiam sodales orci sit amet vehicula
-                                        pellentesque. </p>
+                                    <p>
+                                        Sed semper leo metus, a lacinia eros semper at. Etiam sodales orci sit amet vehicula
+                                        pellentesque.
+                                    </p>
                                 </div>
                                 <div class="feedback-grids">
                                     <div class="feedback-icon">
@@ -617,8 +637,10 @@
                         <div class="item">
                             <div class="feedback-info">
                                 <div class="feedback-top">
-                                    <p> Sed semper leo metus, a lacinia eros semper at. Etiam sodales orci sit amet vehicula
-                                        pellentesque. </p>
+                                    <p>
+                                        Sed semper leo metus, a lacinia eros semper at. Etiam sodales orci sit amet vehicula
+                                        pellentesque.
+                                    </p>
                                 </div>
                                 <div class="feedback-grids">
                                     <div class="feedback-icon">
@@ -645,44 +667,20 @@
             <section class="slider">
                 <div class="flexslider">
                     <ul class="slides">
-                        <li>
-                            <div class="col-md-6 col-sm-6 w3_agile-team-grid ">
-                                <img src="~/img/imagesU/s1.png" alt=" " class="img-responsive" />
-                                <h5>John Doe,
-                                    <span>Body Builder</span>
-                                </h5>
-                                <p>Lorem ipsum dolor sit amet sed do eiusmod incididunt ut labore minim veniam.</p>
-                            </div>
-                            <div class="col-md-6 col-sm-6  w3_agile-team-grid">
-                                <img src="~/img/imagesU/s2.png" alt=" " class="img-responsive" />
-                                <h5>Elit semper,
-                                    <span>Fitness </span>
-                                </h5>
-                                <p>Lorem ipsum dolor sit amet sed do eiusmod incididunt ut labore minim veniam.</p>
-                            </div>
-                            <div class="clearfix"></div>
-
-                        </li>
-                        <li>
-                            <div class="col-md-6 col-sm-6  w3_agile-team-grid">
-                                <img src="~/img/imagesU/s3.png" alt=" " class="img-responsive" />
-                                <h5>Daniel Nyari,
-                                    <span>Fitness</span>
-                                </h5>
-                                <p>Lorem ipsum dolor sit amet sed do eiusmod incididunt ut labore minim veniam.</p>
-
-                            </div>
-                            <div class="col-md-6 col-sm-6  w3_agile-team-grid">
-                                <img src="~/img/imagesU/s4.png" alt=" " class="img-responsive" />
-                                <h5>Daniel Nyari,
-                                    <span> Body Builder</span>
-                                </h5>
-                                <p>Lorem ipsum dolor sit amet sed do eiusmod incididunt ut labore minim veniam.</p>
-
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
-
+                        @foreach (var instructor in Model)
+                        {
+                            <li>
+                                @*our Instructor*@
+                                <div class="col-md-12 col-sm-6 w3_agile-team-grid ">
+                                    <img src="@instructor.PictureUrl" alt=" " class="img-responsive" />
+                                    <h5>
+                                        @instructor.FirstName @instructor.LastName,
+                                        <span>@instructor.Role</span>
+                                    </h5>
+                                    <p>@instructor.Description</p>
+                                </div>
+                            </li>
+                        }
                     </ul>
                 </div>
             </section>
@@ -710,8 +708,10 @@
                                 <li>Followers : 258</li>
                                 <li>comments : 1180</li>
                             </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages
-                                of Lorem Ipsum available.</p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages
+                                of Lorem Ipsum available.
+                            </p>
                             <a href="#" class="view-btn" data-toggle="modal" data-target="#myModal1">Read More</a>
                         </div>
                         <div class="clearfix"> </div>
@@ -730,8 +730,10 @@
                                 <li>Followers : 258</li>
                                 <li>comments : 1180</li>
                             </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages
-                                of Lorem Ipsum available.</p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages
+                                of Lorem Ipsum available.
+                            </p>
                             <a href="#" class="view-btn" data-toggle="modal" data-target="#myModal1">Read More</a>
                         </div>
                         <div class="clearfix"> </div>
@@ -752,8 +754,10 @@
                                 <li>Followers : 258</li>
                                 <li>comments : 1180</li>
                             </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages
-                                of Lorem Ipsum available.</p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages
+                                of Lorem Ipsum available.
+                            </p>
                             <a href="#" class="view-btn" data-toggle="modal" data-target="#myModal1">Read More</a>
                         </div>
                         <div class="clearfix"> </div>
@@ -772,8 +776,10 @@
                                 <li>Followers : 258</li>
                                 <li>comments : 1180</li>
                             </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages
-                                of Lorem Ipsum available.</p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages
+                                of Lorem Ipsum available.
+                            </p>
                             <a href="#" class="view-btn" data-toggle="modal" data-target="#myModal1">Read More</a>
                         </div>
                         <div class="clearfix"> </div>
@@ -783,7 +789,7 @@
             </div>
         </div>
     </div>
-<!-- //blog -->
+    <!-- //blog -->
     <!-- modal -->
     <div class="modal about-modal fade" id="myModal1" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -797,11 +803,13 @@
                 <div class="modal-body">
                     <div class="modal-info">
                         <img src="~/img/imagesU/g2.jpg" alt="" class="img-responsive" />
-                        <p>Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio
+                        <p>
+                            Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio
                             eget nunc. Pellentesque ac fermentum diam. Integer eu facilisis nunc, a iaculis felis. Pellentesque
                             pellentesque tempor enim, in dapibus turpis porttitor quis. Suspendisse ultrices hendrerit massa.
                             Nam id metus id tellus ultrices ullamcorper. Cras tempor massa luctus, varius lacus sit amet,
-                            blandit lorem. Duis auctor in tortor sed tristique. Proin sed finibus sem.</p>
+                            blandit lorem. Duis auctor in tortor sed tristique. Proin sed finibus sem.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -814,7 +822,7 @@
         <div class="container-fluid">
             <div class="map-grid">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6509687.090753893!2d-123.76387427440008!3d37.18697025540024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C+USA!5e0!3m2!1sen!2sin!4v1491201047627"
-                    style="border:0" allowfullscreen></iframe>
+                        style="border:0" allowfullscreen></iframe>
             </div>
         </div>
         <div class="w3layouts-contact-pos">
@@ -851,13 +859,16 @@
             <div class="w3layouts-contact-pos-grid">
                 <span class="field-icon fa fa-clock-o" aria-hidden="true"></span>
                 <ul>
-                    <li>Monday-Friday :
+                    <li>
+                        Monday-Friday :
                         <span> 07:00 AM-22:00 PM</span>
                     </li>
-                    <li>saturday :
+                    <li>
+                        saturday :
                         <span>06:00 AM-23:00 PM</span>
                     </li>
-                    <li>sunday :
+                    <li>
+                        sunday :
                         <span>06:00 AM-23:00 PM</span>
                     </li>
                 </ul>
@@ -923,13 +934,14 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="footer-copy text-center">
-                <p>© @DateTime.Now.Year FitABit. All rights reserved | Design by
+                <p>
+                    © @DateTime.Now.Year FitABit. All rights reserved | Design by
                     <a href="https://www.facebook.com/kristian.borisov.395/">KrisBor3</a>
                 </p>
             </div>
         </div>
     </div>
-<!-- //footer -->
+    <!-- //footer -->
     <!-- js -->
     <script src="~/js/jsU/jquery-2.2.3.min.js"></script>
     <!-- //js -->
@@ -1008,10 +1020,10 @@
         $(document).ready(function () {
             /*
             var defaults = {
-            	containerID: 'toTop', // fading element id
-            	containerHoverID: 'toTopHover', // fading element hover id
-            	scrollSpeed: 1200,
-            	easingType: 'linear' 
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
             };
             */
 

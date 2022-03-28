@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using FitABit.Infrastructure.Models
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+
+<!DOCTYPE html>
 <html lang="en" style="font-size: 16px;" class="u-responsive-sm">
 <head>
     <title>@ViewData["Title"] - FItABitWebProject</title>
@@ -43,9 +47,19 @@
                     <h3 class="motivation">Improve every single day by tracking your progress.</h3>
 
 
-                    <div class="button">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                         <div class="button">
+                        <a class="nav-link text-dark" href="/User/Index">Get started now<br /></a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="button">
                         <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Get started now<br /></a>
                     </div>
+                    }
+                    
 
 
                 </section>

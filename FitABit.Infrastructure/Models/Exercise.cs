@@ -19,9 +19,8 @@ namespace FitABit.Infrastructure.Models
 
         public int? RestTime { get; set; }
 
-        [ForeignKey(nameof(Detail))]
-        public Guid DetailId { get; set; }
-        public Detail Detail { get; set; }
-        
+        public ICollection<Detail> Details { get; set; }
+       
+
     }
 }

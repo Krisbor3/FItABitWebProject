@@ -8,6 +8,12 @@ namespace FitABit.Infrastructure.Data
     {
         public DbSet<Instructor> Instructors { get; set; }
 
+        public DbSet<Program> Programs { get; set; }
+
+        public DbSet<Exercise> Exercises { get; set; }
+
+        public DbSet<Detail> Details { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

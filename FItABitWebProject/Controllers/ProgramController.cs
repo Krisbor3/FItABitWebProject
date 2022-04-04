@@ -26,7 +26,7 @@ namespace FItABit.Controllers
 
         public async Task<IActionResult> See(string id)
         {
-            var exercises = await programService.GetPrograms();
+            var exercises = await programService.GetExercises(id);
             return View(exercises);
         }
     }

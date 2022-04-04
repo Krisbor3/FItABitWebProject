@@ -19,6 +19,10 @@ namespace FitABit.Infrastructure.Models
 
         public int? RestTime { get; set; }
 
+        [ForeignKey(nameof(Program))]
+        public Guid ProgramId { get; set; }
+        public Program Program { get; set; }
+
         public ICollection<Detail> Details { get; set; }
        
 

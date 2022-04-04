@@ -10,5 +10,6 @@ namespace FitABit.Core.Contracts
     public interface IProgramService
     {
         Task<IEnumerable<ProgramListViewModel>> GetPrograms();
+        Task<IEnumerable<ExerciseViewModel>> GetExercises(string id);
     }
 }

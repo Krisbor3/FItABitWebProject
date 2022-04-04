@@ -3,7 +3,7 @@
     Layout = null;
     ViewData["Title"] = "Beginner Workout";
 }
-@model IEnumerable<ProgramListViewModel>
+@model IEnumerable<ExerciseViewModel>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,8 +49,8 @@
                             <div class="sb-nav-link-icon"><i class="fab fa-product-hunt"></i></div>
                             See all Programs
                         </a>
-                       
-                        
+
+
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
@@ -105,25 +105,16 @@
 
                                         <tbody>
                                             <tr>
-                                                @foreach (var program in Model)
+                                                @foreach (var exercise in Model)
                                                 {
-                                                    foreach (var exercise in program.Exercises)
-                                                    {
-                                                    <tr style="font-weight: bold">
-                                                        <td>Exercise: @exercise.Name</td>
-                                                    </tr>
+
+                                                <tr style="font-weight: bold">
+                                                    <td>Exercise: @exercise.Name</td>
+                                                </tr>
                                                 <td>Rest time: @exercise.RestTime sec.</td>
 
-                                                        foreach (var detail in exercise.Details)
-                                                        {
-
-                                                    <td>Reps: @detail.Reps</td>
-                                                    <td>Sets: @detail.Sets</td>
-                                                    <td>Kilos: @detail.Kilograms</td>
-                                                        }
-
-                                                    }
-                                                }</tr>
+                                                }
+                                            </tr>
                                     </table>
                                 </div>
                             </div>

@@ -22,26 +22,26 @@ namespace FitABit.Core.Services
         public async Task<IEnumerable<ProgramListViewModel>> GetPrograms()
         {
             return await repo.All<Program>()
+                .Where(p=>p.Difficulty=="Beginner")
                 .Select(p => new ProgramListViewModel
                 {
                     Name = p.Name,
                     Difficulty = p.Difficulty,
                     Id = p.Id.ToString(),
-                    Exercises = p.Exercises.Select(e => new ExerciseViewModel
-                    {
-                        Name = e.Name,
-                        Id = e.Id.ToString(),
-                        RestTime = e.RestTime,
-                        Details = e.Details.Select(d => new DetailViewModel
-                        {
-                            Id = d.Id.ToString(),
-                            Kilograms = d.Kilograms,
-                            Reps = d.Reps,
-                            Sets = d.Sets
-                        }).ToList(),
-                    }).ToList()
                 })
                 .ToListAsync();
+        }
+
+        public async Task<IEnumerable<ExerciseViewModel>> GetExercises(string id)
+        {
+            return await repo.All<Exercise>()
+                .Where(e => e.ProgramId.ToString() == id)
+                .Select(e => new ExerciseViewModel
+                {
+                    Name = e.Name,
+                    Id = e.Id.ToString(),
+                    RestTime = e.RestTime,
+                }).ToListAsync();
         }
     }
 }

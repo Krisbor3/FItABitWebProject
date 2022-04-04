@@ -18,6 +18,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services
     .AddScoped<IUserService, UserService>()
     .AddScoped<IInstructorService, InstructorService>()
+    .AddScoped<IProgramService, ProgramService>()
     .AddScoped<IApplicationDbRepository,ApplicationDbRepository>();
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)

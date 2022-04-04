@@ -20,7 +20,7 @@
 <body>
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="/User/Beginner">@ViewData["Title"]</a>
+        <a class="navbar-brand ps-3" href="/Program/ProgramLayout">@ViewData["Title"]</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
@@ -45,7 +45,7 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Programs</div>
-                        <a class="nav-link" href="/User/GetAllPrograms">
+                        <a class="nav-link" href="/Program/GetAllPrograms">
                             <div class="sb-nav-link-icon"><i class="fab fa-product-hunt"></i></div>
                             See all Programs
                         </a>
@@ -112,6 +112,7 @@
         <div id="layoutSidenav_content">
             <main>
                 @*conteiner*@
+
                 <div class="container-fluid px-4">
                     <div class="card mb-4">
                         <div class="card-header">
@@ -140,7 +141,7 @@
                                                     <td>@program.Name</td>
                                                     <td>@program.Difficulty</td>
                                                     <td>
-                                                        <a asp-area="user" asp-action="see" asp-controller="user" asp-route-id="@program.Id" class="btn btn-default btn-circle waves-effect waves-circle waves-float">
+                                                        <a asp-area="program" asp-action="see" asp-controller="program" asp-route-id="@program.Id" class="btn btn-default btn-circle waves-effect waves-circle waves-float">
                                                             <span>See exercises</span>
                                                             <i class="fas fa-dumbbell"></i>
                                                         </a>

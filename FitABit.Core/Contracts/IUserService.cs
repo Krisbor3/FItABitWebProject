@@ -14,8 +14,6 @@ namespace FitABit.Core.Constants
         Task<IEnumerable<UserListViewModel>> GetUsers();
         Task<UserEditViewModel> GetUsersForEdit(string id);
         Task<bool> UpdateUser(UserEditViewModel model);
-
-        Task<IEnumerable<ProgramListViewModel>> GetPrograms();
         Task<ApplicationUser> GetUserById(string id);
     }
 }

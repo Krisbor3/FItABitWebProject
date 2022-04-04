@@ -31,22 +31,5 @@ namespace FItABit.Controllers
             var instructors = await instructorService.GetInstructors();
             return View(instructors);
         }
-
-        public async Task<IActionResult> Beginner()
-        {
-            return View();
-        }
-
-        public async Task<IActionResult> GetAllPrograms()
-        {
-            var programs = await userService.GetPrograms();
-
-            return View(programs);
-        }
-        public async Task<IActionResult> See(string id)
-        {
-            var exercises = await userService.GetPrograms();
-            return View(exercises);
-        }
     }
 }

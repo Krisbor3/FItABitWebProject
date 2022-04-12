@@ -20,6 +20,51 @@ namespace FitABit.Core.Services
             this.repo = repo;
         }
 
+        public async Task<bool> AddDetails(DetailViewModel model)
+        {
+            bool result = false;
+            var id = new Guid();
+            var detail = new Detail()
+            {
+                Id = id,
+                Kilograms = model.Kilograms,
+                Reps = model.Reps,
+                Sets = model.Sets,
+                ExerciseId=Guid.Parse(model.ExerciseId)
+            };
+
+            if (detail.Reps != 0 && detail.Kilograms!=0 && detail.Sets!=0)
+            {
+                await repo.AddAsync(detail);
+                await repo.SaveChangesAsync();
+                result = true;
+            }
+            return result;
+        }
+
+
+
+        public async Task<IEnumerable<ExerciseViewModel>> GetExercisesForBackDay()
+        {
+            var program = await repo.All<Program>()
+                .Where(p=>p.Name=="BackDay")
+                .Select(program=>new ProgramListViewModel
+                {
+                    Id=program.Id.ToString()
+                })
+                .FirstAsync();
+
+            return await repo.All<Exercise>()
+                .Where(e => e.ProgramId.ToString() == program.Id)
+                .Select(e => new ExerciseViewModel
+                {
+                    Id = e.Id.ToString(),
+                    Name = e.Name,
+                    RestTime = e.RestTime
+                })
+                .ToListAsync();
+        }
+
         public async Task<IEnumerable<ExerciseViewModel>> GetExercisesForChestDay()
         {
             var program = await repo.All<Program>()
@@ -38,6 +83,19 @@ namespace FitABit.Core.Services
                     RestTime = e.RestTime,
                 })
                 .ToListAsync();
+        }
+
+        public async Task<IEnumerable<DetailViewModel>> SeeResults(string exerciseId)
+        {
+            return await repo.All<Detail>()
+                 .Where(d => d.ExerciseId.ToString() == exerciseId)
+                 .Select(d => new DetailViewModel
+                 {
+                     Reps = d.Reps,
+                     Sets = d.Sets,
+                     Kilograms = d.Kilograms,
+                 })
+                 .ToListAsync();
         }
     }
 }

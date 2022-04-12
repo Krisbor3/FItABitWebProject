@@ -10,5 +10,10 @@ namespace FitABit.Core.Contracts
     public interface IExerciseService
     {
         Task<IEnumerable<ExerciseViewModel>> GetExercisesForChestDay();
+        Task<IEnumerable<ExerciseViewModel>> GetExercisesForBackDay();
+        Task<bool> AddDetails(DetailViewModel model);
+
+        Task<IEnumerable<DetailViewModel>> SeeResults(string exerciseId);
+
     }
 }

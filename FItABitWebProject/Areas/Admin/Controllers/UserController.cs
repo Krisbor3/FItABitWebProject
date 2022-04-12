@@ -76,6 +76,7 @@ namespace FItABit.Areas.Admin.Controllers
 
             return View(model);
         }
+
         [HttpPost]
         public async Task<IActionResult> Edit(UserEditViewModel model)
         {

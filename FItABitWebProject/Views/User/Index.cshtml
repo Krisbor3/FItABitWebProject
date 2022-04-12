@@ -106,9 +106,12 @@
                                     <li>
                                         <a href="#blog" class="scroll">Blog</a>
                                     </li>
-                                    <li>
-                                        <a asp-area="admin">ADMIN</a>
-                                    </li>
+                                    @if (User.IsInRole("Administrator"))
+                                    {
+                                        <li>
+                                            <a asp-area="admin">ADMIN</a>
+                                        </li>
+                                    }
                                     <li class="divider"></li>
                                     <li>
                                         <a class="s-menu" href="#">
@@ -1039,7 +1042,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="~/js/jsU/bootstrap.js"></script>
-    <img src="/img/imagesU/move-up.png" href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span>To Top</img>
+    <img src="/img/imagesU/move-up.png" href="#" id="toTop" style="display: block;">
+    <span id="toTopHover" style="opacity: 1;"></span>To Top</img>
 </body>
 
 </html>

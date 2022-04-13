@@ -21,6 +21,19 @@ namespace FitABit.Core.Services
             this.repo = repo;
         }
 
+        public async Task<UserListViewModel> GetUserByEmail(string email)
+        {
+            return await repo.All<ApplicationUser>()
+                .Where(u=>u.Email==email)
+                .Select(u=>new UserListViewModel
+                {
+                    Email=u.Email,
+                    Id=u.Id,
+                    Name=u.FirstName
+                })
+                .FirstOrDefaultAsync();
+        }
+
         public async Task<ApplicationUser> GetUserById(string id)
         {
             return await repo.GetByIdAsync<ApplicationUser>(id);

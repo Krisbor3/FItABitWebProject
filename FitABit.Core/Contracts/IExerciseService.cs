@@ -13,7 +13,7 @@ namespace FitABit.Core.Contracts
         Task<IEnumerable<ExerciseViewModel>> GetExercisesForBackDay();
         Task<bool> AddDetails(DetailViewModel model);
 
-        Task<IEnumerable<DetailViewModel>> SeeResults(string exerciseId);
+        Task<IEnumerable<DetailViewModel>> SeeResults(string exerciseId,string userId);
 
     }
 }

@@ -30,7 +30,8 @@ namespace FitABit.Core.Services
                 Kilograms = model.Kilograms,
                 Reps = model.Reps,
                 Sets = model.Sets,
-                ExerciseId=Guid.Parse(model.ExerciseId)
+                ExerciseId=Guid.Parse(model.ExerciseId),
+                UserId=Guid.Parse(model.UserId),
             };
 
             if (detail.Reps != 0 && detail.Kilograms!=0 && detail.Sets!=0)
@@ -85,10 +86,11 @@ namespace FitABit.Core.Services
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<DetailViewModel>> SeeResults(string exerciseId)
+        public async Task<IEnumerable<DetailViewModel>> SeeResults(string exerciseId,string userId)
         {
             return await repo.All<Detail>()
                  .Where(d => d.ExerciseId.ToString() == exerciseId)
+                 .Where(d=>d.UserId==Guid.Parse(userId))
                  .Select(d => new DetailViewModel
                  {
                      Reps = d.Reps,

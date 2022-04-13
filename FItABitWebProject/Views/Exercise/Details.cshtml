@@ -94,6 +94,7 @@
                             <div class="col-4">
                                 <form id="detail" method="post">
                                     <input type="hidden" name="ExerciseId" value="@Model.ExerciseId" />
+                                    <input type="hidden" name="UserId" value="@Model.UserId" />
                                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                     <label asp-for="Sets" class="form-label"></label>
                                     <div class="form-floating">

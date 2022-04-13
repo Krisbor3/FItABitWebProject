@@ -24,5 +24,7 @@ namespace FitABit.Core.Models
         public int Kilograms { get; set; }
 
         public string ExerciseId { get; set; }
+
+        public string UserId { get; set; }
     }
 }

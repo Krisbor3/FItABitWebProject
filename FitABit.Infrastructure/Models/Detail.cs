@@ -19,5 +19,7 @@ namespace FitABit.Infrastructure.Models
         public int Kilograms { get; set; }
 
         public Guid ExerciseId { get; set; }
+
+        public Guid UserId { get; set; }
     }
 }

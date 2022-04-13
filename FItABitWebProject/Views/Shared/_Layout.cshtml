@@ -8,7 +8,7 @@
     <title>@ViewData["Title"] - FItABitWebProject</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-     <script src="~/Plugins/jquery/jquery.js"></script>
+    <script src="~/Plugins/jquery/jquery.js"></script>
     <link rel="stylesheet" href="~/FItABitWebProject.styles.css" asp-append-version="true" />
 </head>
 <body>
@@ -50,17 +50,17 @@
 
                     @if (SignInManager.IsSignedIn(User))
                     {
-                         <div class="button">
-                        <a class="nav-link text-dark" href="/User/Index">Get started now<br /></a>
+                        <div class="button">
+                            <a class="nav-link text-dark" href="/User/Index">Get started now<br /></a>
                         </div>
                     }
                     else
                     {
                         <div class="button">
-                        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Get started now<br /></a>
-                    </div>
+                            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Get started now<br /></a>
+                        </div>
                     }
-                    
+
 
 
                 </section>
@@ -77,12 +77,14 @@
 
     @*loader*@
     <div class="loader-wrapper">
-      <span class="loader"><span class="loader-inner"></span></span>
+        <span class="loader"><span class="loader-inner"></span></span>
     </div>
 
     <script>
         $(window).on("load",function(){
-          $(".loader-wrapper").fadeOut("slow");
+           setTimeout(() => {
+           $(".loader-wrapper").fadeOut("slow");
+            }, 1000);
         });
     </script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

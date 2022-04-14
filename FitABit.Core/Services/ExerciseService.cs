@@ -34,7 +34,7 @@ namespace FitABit.Core.Services
                 UserId=Guid.Parse(model.UserId),
             };
 
-            if (detail.Reps != 0 && detail.Kilograms!=0 && detail.Sets!=0)
+            if (detail.Reps != 0 && detail.Kilograms>=0 && detail.Sets!=0)
             {
                 await repo.AddAsync(detail);
                 await repo.SaveChangesAsync();

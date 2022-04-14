@@ -113,13 +113,17 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        Rest time: @exercise.RestTime sec.
+                                                        Max Rest time: @exercise.RestTime sec.
+                                                        <td>
                                                         <a asp-action="details" asp-controller="exercise" asp-route-id="@exercise.Id" asp-route-email="@User.Identity.Name">
                                                             <i class="fas fa-burn"></i> Add Details 
                                                         </a>
+                                                        </td>
+                                                        <td>
                                                         <a asp-action="seeresults" asp-controller="exercise" asp-route-id="@exercise.Id" asp-route-email="@User.Identity.Name">
                                                             <i class="fas fa-eye"></i> See Results
                                                         </a>
+                                                        </td>
                                                     </td>
                                                 </tr>
                                                 }

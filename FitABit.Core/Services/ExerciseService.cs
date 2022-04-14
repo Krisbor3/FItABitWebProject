@@ -86,6 +86,26 @@ namespace FitABit.Core.Services
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<ExerciseViewModel>> GetExercisesForLegDay()
+        {
+            var program = await repo.All<Program>()
+               .Where(p => p.Name == "LegDay")
+               .Select(program => new ProgramListViewModel
+               {
+                   Id = program.Id.ToString()
+               }).FirstAsync();
+
+            return await repo.All<Exercise>()
+                .Where(e => e.ProgramId.ToString() == program.Id)
+                .Select(e => new ExerciseViewModel
+                {
+                    Id = e.Id.ToString(),
+                    Name = e.Name,
+                    RestTime = e.RestTime,
+                })
+                .ToListAsync();
+        }
+
         public async Task<IEnumerable<DetailViewModel>> SeeResults(string exerciseId,string userId)
         {
             return await repo.All<Detail>()

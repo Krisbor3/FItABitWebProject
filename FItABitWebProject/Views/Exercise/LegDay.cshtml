@@ -3,7 +3,7 @@
     Layout = null;
     ViewData["Title"] = "Beginner Workout";
 }
-@model IEnumerable<DetailViewModel>
+@model IEnumerable<ExerciseViewModel>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -101,19 +101,26 @@
                                 <div class="dataTable-container">
                                     <table id="datatablesSimple" class="dataTable-table">
                                         <thead>
-                                            Your history:
                                         </thead>
 
                                         <tbody>
                                             <tr>
-                                                @foreach (var detail in Model)
+                                                @foreach (var exercise in Model)
                                                 {
+
+                                                <tr style="font-weight: bold">
+                                                    <td>Exercise: @exercise.Name</td>
+                                                </tr>
                                                 <tr>
-                                                    <td>Sets: @detail.Sets</td>
-                                               
-                                                    <td>Reps: @detail.Reps</td>
-                                               
-                                                    <td>Kilos: @detail.Kilograms</td>
+                                                    <td>
+                                                        Rest time: @exercise.RestTime sec.
+                                                        <a asp-action="details" asp-controller="exercise" asp-route-id="@exercise.Id" asp-route-email="@User.Identity.Name">
+                                                            <i class="fas fa-burn"></i> Add Details 
+                                                        </a>
+                                                        <a asp-action="seeresults" asp-controller="exercise" asp-route-id="@exercise.Id" asp-route-email="@User.Identity.Name">
+                                                            <i class="fas fa-eye"></i> See Results
+                                                        </a>
+                                                    </td>
                                                 </tr>
                                                 }
                                             </tr>

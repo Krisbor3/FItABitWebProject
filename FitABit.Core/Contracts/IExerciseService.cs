@@ -11,6 +11,7 @@ namespace FitABit.Core.Contracts
     {
         Task<IEnumerable<ExerciseViewModel>> GetExercisesForChestDay();
         Task<IEnumerable<ExerciseViewModel>> GetExercisesForBackDay();
+        Task<IEnumerable<ExerciseViewModel>> GetExercisesForLegDay();
         Task<bool> AddDetails(DetailViewModel model);
 
         Task<IEnumerable<DetailViewModel>> SeeResults(string exerciseId,string userId);

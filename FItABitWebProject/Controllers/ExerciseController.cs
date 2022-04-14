@@ -34,6 +34,12 @@ namespace FItABit.Controllers
             return View(exercises);
         }
 
+        public async Task<IActionResult> LegDay()
+        {
+            var exercises = await exerciseService.GetExercisesForLegDay();
+            return View(exercises);
+        }
+
         public async Task<IActionResult> Details(string id,string email)
         {
             var user = await userService.GetUserByEmail(email);
@@ -59,7 +65,7 @@ namespace FItABit.Controllers
                 ViewData["Result"] = "Update Failed.";
             }
 
-            return Redirect("/Exercise/BackDay");
+            return View(model);
         }
 
         public async Task<IActionResult> SeeResults(string Id,string email)

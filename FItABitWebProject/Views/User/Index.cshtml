@@ -106,6 +106,7 @@
                                     <li>
                                         <a href="#blog" class="scroll">Blog</a>
                                     </li>
+                                    <li class="divider"></li>
                                     @if (User.IsInRole("Administrator"))
                                     {
                                         <li>
@@ -113,22 +114,6 @@
                                         </li>
                                     }
                                     <li class="divider"></li>
-                                    <li>
-                                        <a class="s-menu" href="#">
-                                            Sub menu
-                                            <b class="fa fa-caret-right"></b>
-                                        </a>
-                                        <ul class="dropdown-menu sub-menu">
-                                            <li>
-                                                <a href="#">link1</a>
-                                            </li>
-                                            <li class="divider"></li>
-                                            <li>
-                                                <a href="#">link2</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-
                                 </ul>
                             </li>
 
@@ -223,7 +208,6 @@
                 </div>
                 <div class="about-section">
                     <div class="col-md-4 col-sm-6  abg1">
-                        @*<img style="opacity=0.5" src="~/img/imagesU/a2.jpg" alt="" />*@
                     </div>
                     <div class="col-md-8 col-sm-6 wthree-sec-about">
                         <h4 class="bot-grid1">commit to be fit</h4>
@@ -483,7 +467,8 @@
                 <div class="col-md-4 col-sm-4 plan-grid  text-center">
                     <ul class="price-plan">
                         <li class="price-type">beginner</li>
-                        <li class="price-tag">$50</li>
+                        @*<li class="price-tag">$50</li>*@
+                        <li class="price-tag">FREE</li>
                     </ul>
                     <ul class="price-list">
                         <li>personal trainer</li>
@@ -492,7 +477,7 @@
                         <li>advanced fitness</li>
                     </ul>
                     <div class="price1-btn">
-                        <a href="/Program/ProgramLayout">buy now</a>
+                        <a href="/Program/ProgramLayout">Get started now</a>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4  plan-grid  text-center">
@@ -507,7 +492,7 @@
                         <li>advanced fitness</li>
                     </ul>
                     <div class="price1-btn">
-                        <a href="#">buy now</a>
+                        <a disabled="disabled">In progress</a>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4  plan-grid  text-center">
@@ -522,7 +507,7 @@
                         <li>advanced fitness</li>
                     </ul>
                     <div class="price1-btn">
-                        <a href="#">buy now</a>
+                        <a disabled="disabled">In progress</a>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -845,7 +830,7 @@
                 </ul>
             </div>
             <div class="w3layouts-contact-pos-grid sr2">
-                <span class="field-icon fa fa-envelope-o fa-lg" aria-hidden="true"></span>
+                <span class="field-icon fas fa-envelope" aria-hidden="true"></span>
                 <ul>
                     <li>
                         <a href="mailto:info@example.com">info@example.com</a>
@@ -909,7 +894,7 @@
     <!-- footer -->
     <div class="footer-main text-center">
         <div class="footer-grid">
-            <a href="#">
+            <a href="https://www.facebook.com/kristian.borisov.395/">
                 <span class="fab fa-facebook" aria-hidden="true"></span>
                 <h6>like on facebook</h6>
             </a>

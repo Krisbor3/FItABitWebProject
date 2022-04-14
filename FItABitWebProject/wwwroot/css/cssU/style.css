@@ -1,9 +1,3 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
 
 body {
     margin: 0;
@@ -598,7 +592,7 @@ ul.callbacks_tabs li {
 }
 
 .layer {
-    background: url(../images/dott.png)repeat 0px 0px;
+    background: url(/img/imagesU/dott.png)repeat 0px 0px;
     /* background-size: 2px;
     -webkit-background-size: 2px;
     -moz-background-size: 2px;
@@ -621,17 +615,17 @@ ul.callbacks_tabs li {
 }
 
 .w3ls-banner-image1 {
-    background: url(../images/bg2.jpg) no-repeat center;
+    background: url(~/img/imagesU/bg2.jpg) no-repeat center;
     background-size: cover;
 }
 
 .w3ls-banner-image2 {
-    background: url(../images/b3.jpg) no-repeat center;
+    background: url(~/img/imagesU/b3.jpg) no-repeat center;
     background-size: cover;
 }
 
 .w3ls-banner-image3 {
-    background: url(../images/b1.jpg) no-repeat center;
+    background: url(~/img/imagesU/b1.jpg) no-repeat center;
     background-size: cover;
 }
 
@@ -641,7 +635,7 @@ ul.callbacks_tabs li {
 }
 
 .w3ls-banner-image3 {
-    background: url(../images/b1.jpg) no-repeat center;
+    background: url(~/img/imagesU/b1.jpg) no-repeat center;
     background-size: cover;
 }
 
@@ -852,7 +846,7 @@ h3.title1 {
 }
 
 .abg1 {
-    background: url(../images/a2.jpg) no-repeat center;
+    background: url(/img/imagesU/a2.jpg) no-repeat center;
     background-size: cover;
 }
 
@@ -870,7 +864,7 @@ h3.title1 {
 }
 
 .abg2 {
-    background: url(../images/a1.jpg) no-repeat center;
+    background: url(/img/imagesU/a1.jpg) no-repeat center;
     background-size: cover;
 }
 
@@ -985,13 +979,13 @@ h4.explore-title {
 /*-- stats --*/
 
 .stats {
-    background: url(../images/g3.jpg) no-repeat;
+    background: url(/img/imagesU/g3.jpg) no-repeat;
     background-size: cover;
     background-position: 0 -60px;
 }
 
 .layer-stats {
-    background: url(../images/dott.png)center;
+    background: url(/img/imagesU/dott.png)center;
 }
 
 .stats-grid {
@@ -1117,7 +1111,7 @@ a.sb {
 /*-- testimonials --*/
 
 .team {
-    background: url(../images/1.jpg) no-repeat right;
+    background: url(/img/imagesU/1.jpg) no-repeat right;
     background-size: contain;
 }
 
@@ -1652,7 +1646,7 @@ h4.modal-title {
     height: 35px;
     border: none;
     text-indent: 100%;
-    background: url("~/img/imagesU/move-up.png") no-repeat 0px 0px;
+    background: url("/img/imagesU/move-up.png") no-repeat 0px 0px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -o-border-radius: 50%;

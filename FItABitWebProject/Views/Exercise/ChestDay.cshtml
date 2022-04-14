@@ -111,10 +111,20 @@
                                                 <tr style="font-weight: bold">
                                                     <td>Exercise: @exercise.Name</td>
                                                 </tr>
-                                                <td>Rest time: @exercise.RestTime sec.</td>
-
+                                                <tr>
+                                                    <td>
+                                                        Rest time: @exercise.RestTime sec.
+                                                        <a asp-action="details" asp-controller="exercise" asp-route-id="@exercise.Id" asp-route-email="@User.Identity.Name">
+                                                            <i class="fas fa-burn"></i> Add Details 
+                                                        </a>
+                                                        <a asp-action="seeresults" asp-controller="exercise" asp-route-id="@exercise.Id" asp-route-email="@User.Identity.Name">
+                                                            <i class="fas fa-eye"></i> See Results
+                                                        </a>
+                                                    </td>
+                                                </tr>
                                                 }
                                             </tr>
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>

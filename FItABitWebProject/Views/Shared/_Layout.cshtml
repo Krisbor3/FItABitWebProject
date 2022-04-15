@@ -41,30 +41,7 @@
                 <img src="~/img/FitABit-logos_transparent.png" alt="" class="logoImg" width=150 height=150>
                 @RenderBody()
                 <hr />
-                <section class="u-align-center u-clearfix u-image u-shading u-valign-top u-section-1" id="carousel_b157" data-image-width="1600" data-image-height="933">
-
-                    <h5 class="FitSite">Fitness Site</h5>
-                    <h2 class="Slogan"> Get a bit more fit !</h2>
-                    <h3 class="motivation">Improve every single day by tracking your progress.</h3>
-
-
-                    @if (SignInManager.IsSignedIn(User))
-                    {
-                        <div class="button">
-                            <a class="nav-link text-dark" href="/User/Index">Get started now<br /></a>
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="button">
-                            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Get started now<br /></a>
-                        </div>
-                    }
-
-
-
-                </section>
-
+               <partial name="_StartUpTextPartial" />
             </main>
         </div>
 

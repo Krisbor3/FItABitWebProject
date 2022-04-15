@@ -92,4 +92,10 @@
     <Folder Include="Areas\Admin\Views\Home\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\js\chat.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

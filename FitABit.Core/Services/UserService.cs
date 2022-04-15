@@ -23,25 +23,35 @@ namespace FitABit.Core.Services
 
         public async Task<UserListViewModel> GetUserByEmail(string email)
         {
-            return await repo.All<ApplicationUser>()
-                .Where(u=>u.Email==email)
-                .Select(u=>new UserListViewModel
+            var user = await repo.All<ApplicationUser>()
+                .Where(u => u.Email == email)
+                .Select(u => new UserListViewModel
                 {
-                    Email=u.Email,
-                    Id=u.Id,
-                    Name=u.FirstName
+                    Email = u.Email,
+                    Id = u.Id,
+                    Name = u.FirstName
                 })
                 .FirstOrDefaultAsync();
+            if (user == null)
+            {
+                throw new ArgumentException("Unknown user email");
+            }
+            return user;
         }
 
         public async Task<ApplicationUser> GetUserById(string id)
         {
-            return await repo.GetByIdAsync<ApplicationUser>(id);
+            var user = await repo.GetByIdAsync<ApplicationUser>(id);
+            if (user == null)
+            {
+                throw new ArgumentException("User with this id does not exist");
+            }
+            return user;
         }
 
         public async Task<IEnumerable<UserListViewModel>> GetUsers()
         {
-            return await repo.All<ApplicationUser>()
+            var users = await repo.All<ApplicationUser>()
                 .Select(u => new UserListViewModel
                 {
                     Email = u.Email,
@@ -49,6 +59,7 @@ namespace FitABit.Core.Services
                     Name = $"{u.FirstName} {u.LastName}"
                 })
                 .ToListAsync();
+            return users;
         }
 
         public async Task<UserEditViewModel> GetUsersForEdit(string id)

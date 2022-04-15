@@ -88,32 +88,40 @@
         <div id="layoutSidenav_content">
             <main>
                 @*conteiner*@
-
-                <div class="container">
-                    <div class="row">&nbsp;</div>
-                    <div class="row">
-                        <div class="col-2">User</div>
-                        <div class="col-4"><input type="text" id="userInput" /></div>
+                <!-- /.panel-heading -->
+                <h2>ChatBox</h2>
+                <div class="chat-panel panel panel-default">
+                    <div class="panel-heading">
+                        ChatBox using SingalR
+                        <i class="fa fa-paper-plane fa-fw"></i>
                     </div>
-                    <div class="row">
-                        <div class="col-2">Message</div>
-                        <div class="col-4"><input type="text" id="messageInput" /></div>
-                    </div>
-                    <div class="row">&nbsp;</div>
-                    <div class="row">
-                        <div class="col-6">
-                            <input type="button" id="sendButton" value="Send Message" />
+                    <!-- /.panel-body -->
+                    <div class="container">
+                        <div class="row">&nbsp;</div>
+                        <div class="row">
+                            <div class="col-2">User</div>
+                            <div class="col-4"><input type="text" id="userInput" /></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">Message</div>
+                            <div class="col-4"><input type="text" id="messageInput" /></div>
+                        </div>
+                        <div class="row">&nbsp;</div>
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="button" id="sendButton" value="Send Message" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <hr />
+                    <div class="row">
+                        <div class="col-12">
+                            <hr />
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <ul id="messagesList"></ul>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul id="messagesList"></ul>
+                        </div>
                     </div>
                 </div>
             </main>

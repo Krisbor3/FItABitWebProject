@@ -24,10 +24,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                       
+                            @{int i=1;
                         @foreach (var user in Model)
                         {
-                            <tr>
-                                <th scope="row">1</th>
+                                <tr>
+                                    <th scope="row">@i</th>
                                 <td>@user.Name</td>
                                 <td>@user.Email</td>
                                 <td>
@@ -40,7 +42,9 @@
                                         <i class="fas fa-user-tag"></i>
                                     </a>
                                 </td>
-                            </tr>
+                                </tr>
+                                i++;
+                            }
                         }
                     </tbody>
                 </table>

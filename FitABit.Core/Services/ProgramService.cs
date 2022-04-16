@@ -17,12 +17,12 @@ namespace FitABit.Core.Services
 
         public ProgramService(IApplicationDbRepository repo)
         {
-            this.repo= repo;
+            this.repo = repo;
         }
         public async Task<IEnumerable<ProgramListViewModel>> GetPrograms()
         {
-            return await repo.All<Program>()
-                .Where(p=>p.Difficulty=="Beginner")
+            var programs = await repo.All<Program>()
+                .Where(p => p.Difficulty == "Beginner")
                 .Select(p => new ProgramListViewModel
                 {
                     Name = p.Name,
@@ -30,11 +30,17 @@ namespace FitABit.Core.Services
                     Id = p.Id.ToString(),
                 })
                 .ToListAsync();
+
+            if (programs.Count == 0)
+            {
+                throw new ArgumentException("No programs");
+            }
+            return programs;
         }
 
         public async Task<IEnumerable<ExerciseViewModel>> GetExercises(string id)
         {
-            return await repo.All<Exercise>()
+            var exercises = await repo.All<Exercise>()
                 .Where(e => e.ProgramId.ToString() == id)
                 .Select(e => new ExerciseViewModel
                 {
@@ -42,6 +48,11 @@ namespace FitABit.Core.Services
                     Id = e.Id.ToString(),
                     RestTime = e.RestTime,
                 }).ToListAsync();
+            if (exercises.Count == 0)
+            {
+                throw new ArgumentException("No Exercises found");
+            }
+            return exercises;
         }
     }
 }
